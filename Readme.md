@@ -1,7 +1,7 @@
 `Concurrent programming`\
 Task 1
 
-Find max element of the given matrix (of arbitrary size)
+Find maxElem element of the given matrix (of arbitrary size)
 which is divisible by 3 (by whole)
 
 _Important:_
