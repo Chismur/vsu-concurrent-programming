@@ -27,7 +27,7 @@ public class Matrix {
     }
 
     public int getN() {
-        return n;
+        return data.length;
     }
 
     public void setN(int n) {
@@ -35,7 +35,7 @@ public class Matrix {
     }
 
     public int getM() {
-        return m;
+        return data[0].length;
     }
 
     public void setM(int m) {
@@ -43,7 +43,7 @@ public class Matrix {
     }
 
     private int getBySequenceNumber(int sequenceNumber) {
-        if (sequenceNumber >= 0 && sequenceNumber < n * m) {
+        if (sequenceNumber >= 0 && sequenceNumber <= data.length* data[0].length) {
             int i = sequenceNumber / data[0].length;
             int j = sequenceNumber % data[0].length;
             return data[i][j];

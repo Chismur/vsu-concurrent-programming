@@ -24,8 +24,12 @@ public class Main {
 
         Matrix matrix = new Matrix();
         matrix.setData(nArr);
+
+
+        int r = matrix.getMax(0, 8);
+
         try {
-            System.out.println(MaxFinder.findMax(matrix, 1));
+            System.out.println(MaxFinder.findMax(matrix, 2));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -33,9 +37,6 @@ public class Main {
 
 
     }
-
-
-
 
 
 }
