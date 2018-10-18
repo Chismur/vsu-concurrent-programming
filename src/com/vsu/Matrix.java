@@ -10,6 +10,14 @@ public class Matrix {
 
     private int maxElem;
 
+    public int[][] getData() {
+        return data;
+    }
+
+    public void setData(int[][] data) {
+        this.data = data;
+    }
+
     public int getMaxElem() {
         return maxElem;
     }
@@ -60,6 +68,7 @@ public class Matrix {
         }
         return max;
     }
+
 
     //todo: read from file
     //todo: get/set elements

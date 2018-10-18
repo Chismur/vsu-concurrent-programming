@@ -7,7 +7,7 @@ public class MaxFinder {
 
     private int result;
 
-    public int findMax(Matrix matrix, int threadCount) throws InterruptedException {
+    public static int findMax(Matrix matrix, int threadCount) throws InterruptedException {
 
         List<Thread> threads = new ArrayList<>();
         int elementsPerThread = matrix.getM() * matrix.getN() / threadCount;
@@ -16,7 +16,7 @@ public class MaxFinder {
         for (int i = 0; i < threadCount; i++) {
             threads.add(new Thread(new MatrixRunnable(
                     i * elementsPerThread,
-                    (i + 1) * elementsPerThread + (i % (threadCount - 1) * elementsLeft),
+                    (i + 1) * elementsPerThread + (i % (threadCount) * elementsLeft),
                     matrix)));
         }
 

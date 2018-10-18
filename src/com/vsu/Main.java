@@ -23,7 +23,13 @@ public class Main {
         fileReaderUtils.printArray(nArr);
 
         Matrix matrix = new Matrix();
-        System.out.println(nArr[4].length);
+        matrix.setData(nArr);
+        try {
+            System.out.println(MaxFinder.findMax(matrix, 1));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println();
 
 
     }

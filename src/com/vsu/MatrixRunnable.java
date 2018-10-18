@@ -15,8 +15,8 @@ public class MatrixRunnable implements Runnable {
     @Override
     public void run() {
         int max = matrix.getMax(start, end);
-        synchronized (matrix){
-            if (matrix.getMaxElem()<max){
+        if (matrix.getMaxElem() > max) {
+            synchronized (matrix) {
                 matrix.setMaxElem(max);
             }
         }
