@@ -67,7 +67,7 @@ public class FileReaderUtils {
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                arr[i][j] = random.nextInt(((99)+1));
+                arr[i][j] = random.nextInt(100);
             }
         }
         return arr;
