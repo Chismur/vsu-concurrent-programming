@@ -1,50 +1,38 @@
 package com.vsu;
 
+import java.util.HashMap;
+
 public class Main {
 
-    private static final String PATH = "./resources/matrix.txt";
-    //private static final String PATH_TEST = "./matrixTest.txt";
-    private static final int rows = 1000;
-    private static final int cols = 1000;
-    private static final Matrix matrix = new Matrix();
     public static void main(String[] args) {
 
+        double[][] m = {
+                {2,4,0,0,0},
+                {4,2,1,2,0},
+                {0,1,3,4,3},
+                {0,2,4,2,0},
+                {0,0,3,0,1} };
 
-        FileReaderUtils fileReaderUtils = new FileReaderUtils(PATH);
-//
-        int[][] arr = fileReaderUtils.getRandomMatrix(rows,cols);
+        double[] f = {8,23,19,12,14};
 
-        //fileReaderUtils.printArray(arr);
+        HashMap<Integer,Double> map = new HashMap<>();
+        map.put(0,2.0);
+        map.put(4,2.0);
+
+        BorderRules borderRules = new BorderRules(m,f);
+        System.out.println("Initial matrix : ");
+        borderRules.showMatrix();
+        System.out.println("Initial vector f : ");
+        borderRules.showVector();
+        System.out.println("Border conditions : ");
+        borderRules.showConditions(map);
+        borderRules.countBorderRules(map);
+        System.out.println("Result matrix : ");
+        borderRules.showMatrix();
+        System.out.println("Result vector f : ");
+        borderRules.showVector();
 
 
-        //fileReaderUtils.saveArrayToFile(arr, PATH);
-
-//        int[][] nArr = fileReaderUtils.loadArrayFromFile(PATH);
-//        fileReaderUtils.printArray(nArr);
-
-
-        matrix.setData(arr);
-
-
-        int max;
-        int startPos;
-        try {
-            startPos = MaxFinder.findMax(matrix);
-            System.out.println(Thread.currentThread().getName() + "thread Started");
-            max = matrix.getMax(startPos, matrix.getM()*matrix.getN()-1);
-            System.out.println(Thread.currentThread().getName() + "thread found max = " + max);
-            if (matrix.getMaxElem() < max){
-                synchronized (matrix){
-                    System.out.println(Thread.currentThread().getName() + "thread rewriting max");
-                    matrix.setMaxElem(max);
-                }
-            }
-            System.out.println(matrix.getMaxElem());
-
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println();
 
 
     }

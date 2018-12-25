@@ -1,6 +1,7 @@
 package com.vsu;
 
 public class Matrix {
+
     private int[][] data;
 
     /**
@@ -68,7 +69,6 @@ public class Matrix {
         }
         return max;
     }
-
 
     //todo: read from file
     //todo: get/set elements
